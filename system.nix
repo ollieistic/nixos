@@ -1,0 +1,61 @@
+{ config, pkgs, ... }:
+{
+  imports = [
+    ./hardware.nix
+  ];
+
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
+  # Kernel Version
+  boot.kernelPackages = pkgs.linuxPackages_6_6;
+
+  # Display Manager
+  services.displayManager.ly.enable = true;
+
+  # Networking
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  # OpenGL
+  hardware.graphics.enable = true;
+
+  # NVIDIA Drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  # Timezone & User
+  time.timeZone = "Europe/Stockholm";
+
+  users.users.ollie = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
+
+  # Audio
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
+  };
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # System
+  system.stateVersion = "25.05";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+}
