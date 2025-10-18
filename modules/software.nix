@@ -5,6 +5,7 @@
     neovim
     git
     kitty
+    ghostty
     hyprshot
     nautilus
     rofi
@@ -17,12 +18,19 @@
     tor-browser
     discord
     spotify
-    pavucontrol
     cava
     btop
     fastfetch
     flatpak
     catppuccin-cursors.latteDark
     bat
+    waybar
+  ];
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-emoji
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 }

@@ -21,8 +21,9 @@
 	};
 
 	modules = [
-	  ./modules/software.nix
 	  ./system.nix
+	  ./modules/software.nix
+	  ./modules/steam.nix
 	];
     };
   };
