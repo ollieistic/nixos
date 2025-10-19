@@ -3,6 +3,10 @@
   let
     unstable = import inputs.nixpkgs-unstable { inherit (pkgs) system; config.allowUnfree = true; };
   in {
+    imports = [
+      ./../home/home.nix
+    ];
+
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       vim
@@ -30,12 +34,12 @@
       waybar
     ];
 
-    fonts.packages = with pkgs; [
-      noto-fonts
-      noto-fonts-emoji
-      nerd-fonts.fira-code
-      nerd-fonts.jetbrains-mono
-    ];
+    #fonts.packages = with pkgs; [
+    #  noto-fonts
+    #  noto-fonts-emoji
+    #  nerd-fonts.fira-code
+    #  nerd-fonts.jetbrains-mono
+    #];
   };
 }
 

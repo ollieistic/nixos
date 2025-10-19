@@ -36,6 +36,13 @@ in
   # Timezone
   time.timeZone = "Europe/Stockholm";
 
+  # Home-manager
+  home-manager = {
+    useGlobalPkgs = false;
+    useUserPackages = true;
+    users.ollie = import ./home/home.nix;
+  };
+
   # User
   users.users.ollie = {
     isNormalUser = true;

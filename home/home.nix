@@ -1,13 +1,8 @@
 { config, pkgs, ... }:
-let
-  version = "25.05"
-in
 {
-  programs.home-manager.enable = true;
-  
   home.username = "ollie";
   home.homeDirectory = "/home/ollie";
-  home.stateVersion = version;
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
     hello
