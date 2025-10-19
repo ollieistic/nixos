@@ -1,7 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
+let
+  unstable = import inputs.nixpkgs-unstable { inherit (pkgs) system; };
+in
 {
   imports = [
     ./hardware.nix
+    ./modules/desktop/gnome.nix
   ];
 
   # Bootloader
@@ -12,7 +16,7 @@
   boot.kernelPackages = pkgs.linuxPackages_6_6;
 
   # Display Manager
-  services.displayManager.ly.enable = true;
+  #services.displayManager.ly.enable = true;
 
   # Networking
   networking.hostName = "nixos";
@@ -29,13 +33,13 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # Timezone & User
+  # Timezone
   time.timeZone = "Europe/Stockholm";
 
+  # User
   users.users.ollie = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   # Audio
@@ -50,10 +54,10 @@
   };
 
   # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  #programs.hyprland = {
+  #  enable = true;
+  #  xwayland.enable = true;
+  #};
 
   # System
   system.stateVersion = "25.05";
