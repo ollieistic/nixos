@@ -9,23 +9,29 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, unstable, home-manager, ... }:
   let
     system = "x86_64-linux";
     stateVersion = "25.05";
+
+    unstable-pkgs = import unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in
   {
     nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-	specialArgs = { inherit inputs system; };
+        inherit system;
+	specialArgs = { unstable = unstable-pkgs; inherit inputs; };
 	
 	pkgs = import inputs.nixpkgs {
 	  inherit system;
-	  config = { allowUnfree = true; };
+	  config.allowUnfree = true;
 	};
 
 	modules = [
 	  ./system.nix
-	  ./modules/software.nix
+	  ./modules/packages.nix
 	  ./modules/apps/steam.nix
 	  inputs.home-manager.nixosModules.home-manager
 	];
