@@ -6,11 +6,12 @@ in
   imports = [
     ./hardware.nix
     ./modules/desktop/gnome.nix
+    ./modules/system/limine.nix
   ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
   
   # Kernel Version
   boot.kernelPackages = pkgs.linuxPackages_6_6;
