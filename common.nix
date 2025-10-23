@@ -6,15 +6,21 @@ in
   imports = [
     ./hardware.nix
     ./modules/desktop/gnome.nix
-    ./modules/system/limine.nix
+    ./modules/system/bootloader.nix
   ];
 
   # Bootloader
-  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = false;
   #boot.loader.efi.canTouchEfiVariables = true;
-  
+
+  #boot.loader.limine.enable = true;
+  #boot.loader.limine.efiSupport = true;
+  #boot.loader.limine.style.wallpapers = [ ./boot-screen.jpg ];
+  #boot.loader.limine.style.interface.resolution = "1920x01080";
+  #boot.loader.limine.style.interface.branding = "Ollieistic";
+
   # Kernel Version
-  boot.kernelPackages = pkgs.linuxPackages_6_6;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Display Manager
   #services.displayManager.ly.enable = true;

@@ -30,7 +30,7 @@
 	};
 
 	modules = [
-	  ./system.nix
+	  ./common.nix
 	  ./modules/packages.nix
 	  ./modules/apps/steam.nix
 	  inputs.home-manager.nixosModules.home-manager
