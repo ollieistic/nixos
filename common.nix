@@ -33,11 +33,19 @@ in
   # Timezone
   time.timeZone = "Europe/Stockholm";
 
+  # Catppuccin Theme
+  catppuccin.accent = "blue";
+  catppuccin.enable = true;
+  catppuccin.flavor = "macchiato";
+
   # Home-manager
-  home-manager = {
-    useGlobalPkgs = false;
-    useUserPackages = true;
-    users.ollie = import ./home/home.nix;
+  home-manager.useGlobalPkgs = false;
+  home-manager.useUserPackages = true;
+  home-manager.users.ollie = {
+    imports = [
+      ./home/home.nix
+      #inputs.catppuccin.homeModules.catppuccin
+    ];
   };
 
   # User

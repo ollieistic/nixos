@@ -2,9 +2,11 @@
 
 {
   # Extensions
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    hide-minimized
+  home.packages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.hide-minimized
+    gnome-extension-manager
+    gnome-tweaks
   ];
 
   # Configuration
@@ -31,13 +33,13 @@
     };
 
     theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
+      name = "Nordic";
+      package = pkgs.nordic;
     };
 
-    #cursorTheme = {
-    #  name = "";
-    #  package = pkgs.catppuccin-cursors.latteDark
+    #cursorTheme = { 
+    #  name = "Whitesur";
+    #  package = pkgs.whitesur-cursors;
     #};
 
     gtk3.extraConfig = {
@@ -53,5 +55,5 @@
     };
   };
 
-  home.sessionVariables.GTK_THEME = "palenight";
+  home.sessionVariables.GTK_THEME = "Nordic";
 }

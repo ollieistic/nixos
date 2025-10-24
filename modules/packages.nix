@@ -24,8 +24,6 @@
     pkgs.tty-clock
     pkgs.cava
     pkgs.fastfetch
-    pkgs.pywal16
-    pkgs.imagemagick
 
     # Editors
     pkgs.vim

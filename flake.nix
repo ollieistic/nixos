@@ -7,6 +7,8 @@
     
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = inputs@{ nixpkgs, unstable, home-manager, ... }:
@@ -34,6 +36,7 @@
 	  ./modules/packages.nix
 	  ./modules/apps/steam.nix
 	  inputs.home-manager.nixosModules.home-manager
+	  inputs.catppuccin.nixosModules.catppuccin
 	];
     };
   };
