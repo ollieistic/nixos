@@ -33,6 +33,11 @@ in
   # Timezone
   time.timeZone = "Europe/Stockholm";
 
+  # Catppuccin Theme
+  catppuccin.enable = true;
+  catppuccin.flavor = "macchiato";
+  catppuccin.accent = "maroon";
+
   # Home-manager
   home-manager.useGlobalPkgs = false;
   home-manager.useUserPackages = true;

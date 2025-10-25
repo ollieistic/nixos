@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
   };
 

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./configs/gnome.nix
+    #./configs/gnome.nix
   ];
 
   home.username = "ollie";
