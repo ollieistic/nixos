@@ -44,7 +44,7 @@ in
   home-manager.users.ollie = {
     imports = [
       ./home/home.nix
-      #inputs.catppuccin.homeModules.catppuccin
+      inputs.catppuccin.homeModules.catppuccin
     ];
   };
 

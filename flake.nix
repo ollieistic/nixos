@@ -11,7 +11,7 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ nixpkgs, unstable, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, unstable, home-manager, catppuccin, ... }:
   let
     system = "x86_64-linux";
     stateVersion = "25.05";
