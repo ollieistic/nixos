@@ -6,7 +6,7 @@
     unstable.librewolf
     unstable.ungoogled-chromium
     pkgs.ghostty
-    pkgs.kitty
+    #pkgs.kitty
     pkgs.nautilus
     pkgs.hyprshot
     pkgs.playerctl
