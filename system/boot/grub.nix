@@ -43,13 +43,10 @@ in
     {
       boot.loader.grub.enable = true;
       boot.loader.grub.useOSProber = cfg.useOSProber;
-      boot.loader.timeout = 5;
-      boot.loader.grub.configurationLimit = 3;
     }
 
     /* BIOS mode */
     (lib.mkIf (cfg.mode == "bios") {
-      boot.loader.grub.version = 2;
       boot.loader.grub.devices = [ cfg.device ];
       boot.loader.grub.efiSupport = false;
       boot.loader.grub.enableCryptodisk = true;
@@ -57,7 +54,6 @@ in
 
     /* UEFI mode */
     (lib.mkIf (cfg.mode == "uefi") {
-      boot.loader.grub.version = 2;
       boot.loader.grub.efiSupport = true;
       boot.loader.grub.efiInstallAsRemovable = false;
       boot.loader.grub.device = "nodev";
