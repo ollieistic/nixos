@@ -1,5 +1,10 @@
 { config, lib, ... }:
 
+/*
+  TODO:
+  - Add option to set default shell via a string
+*/
+
 {
   imports = [
     ./hardware.nix

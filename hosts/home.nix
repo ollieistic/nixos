@@ -1,12 +1,12 @@
 { ... }:
 
 let
-  name = "ollie"
+  username = "ollie"
 in
 
 {
-  home.username = name;
-  home.homeDirectory = "/home" + name;
+  home.username = username;
+  home.homeDirectory = "/home" + username;
   home.stateVersion = "25.05";
 }
 
