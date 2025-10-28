@@ -7,7 +7,6 @@ in
 {
   options.modules.shell = {
     zsh.enable = lib.mkEnableOption "Enable Zsh shell";
-    zsh.defaultInteractiveShell = lib.mkEnableOption "Set Zsh to default interactive shell";
   };
 
   config = lib.mkIf cfg.enable {
