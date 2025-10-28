@@ -5,6 +5,7 @@
     ./users.nix
     ./fonts.nix
     ./hardware
+    ./apps
     ./boot
     ./services
     ./desktop/hyprland.nix
