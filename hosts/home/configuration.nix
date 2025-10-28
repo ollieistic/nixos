@@ -18,8 +18,9 @@
       limine.mode = "uefi"; # "uefi" or "bios"
       limine.device = "nodev"; # Change this if you are on BIOS mode
 
-      /* Systemd-boot */
+      /* Systemd-boot (UEFI only) */
       # systemd-boot.enable = true;
+      # systemd-boot.efiMountPoint = "/boot";
 
       /* GRUB */
       # grub.enable = true;

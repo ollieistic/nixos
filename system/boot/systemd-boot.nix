@@ -3,10 +3,10 @@
 /* This module configures systemd-boot. */
 
 let
-  cfg = config.modules.boot.systemd-boot;
+  cfg = config.modules.bootloader.systemd-boot;
 in
 {
-  options.modules.boot.systemd-boot = {
+  options.modules.bootloader.systemd-boot = {
     enable = lib.mkEnableOption "Enable systemd-boot as bootloader.";
 
     efiMountPoint = lib.mkOption {
