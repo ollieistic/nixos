@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     ./../../system
+    ./../../user
   ];
 
   modules = {
