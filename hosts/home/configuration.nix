@@ -11,6 +11,13 @@
     /* Proprietary NVIDIA drivers */
     drivers.nvidia.enable = true;
 
+    /* Shell */
+    shell.fish.enable = true;
+    shell.zsh.enable = true;
+    
+    /* Services */
+    services.audio.enable = true;
+
     /* Bootloader */
     bootloader = {
       /* Limine */
@@ -27,9 +34,6 @@
       # grub.mode = "uefi"; # "uefi" or "bios"
       # grub.device = "nodev"; # Change this if you are on BIOS Mode
     };
-
-    /* Services */
-    services.audio.enable = true;
   };
 
   /* Hostname */
