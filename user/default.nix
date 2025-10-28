@@ -1,1 +1,7 @@
-{ ... }:
+{
+  imports = [
+    ./packages.nix
+    ./shell
+  ];
+}
+
