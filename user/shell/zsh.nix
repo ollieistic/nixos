@@ -5,7 +5,7 @@ let
 in
 
 {
-  options.modules = {
+  options.modules.shell = {
     zsh.enable = lib.mkEnableOption "Enable Zsh shell";
     zsh.defaultInteractiveShell = lib.mkEnableOption "Set Zsh to default interactive shell";
   };
@@ -14,7 +14,7 @@ in
     programs.zsh = {
       enable = true;
       enableCompletion = true;
-      autosuggestion.enable = true;
+      autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
 
       shellAliases = {

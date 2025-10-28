@@ -5,7 +5,7 @@ let
 in
 
 {
-  options.modules = {
+  options.modules.shell = {
     fish.enable = lib.mkEnableOption "Enable Fish shell";
     fish.defaultInteractiveShell = lib.mkEnableOption "Set Fish to default interactive shell";
   };
