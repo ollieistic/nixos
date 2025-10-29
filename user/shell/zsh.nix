@@ -23,6 +23,15 @@ in
 	nixbuild = "sudo nixos-rebuild switch";
 	nixtest = "sudo nixos-rebuild dry-run";
       };
+
+      ohMyZsh = {
+        enable = true;
+	plugins = [ "git" ];
+	custom = "$HOME/.oh-my-zsh/custom/";
+	#theme = "powerlevel10k/powerlevel10k";
+      };
+
+      promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     };
   };
 
