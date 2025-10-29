@@ -1,11 +1,10 @@
 { config, lib, ... }:
 
-/* This module configures Limine. */
-
 let
   cfg = config.modules.bootloader.limine;
   wallpaper = ./boot-screen.jpg;
 in
+
 {
   options = {
     modules.bootloader.limine = {

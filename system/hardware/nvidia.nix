@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
-/* This module installs and enables proprietary NVIDIA drivers. */
-
 let
   cfg = config.modules.drivers.nvidia;
 in

@@ -1,10 +1,9 @@
 { config, lib, ... }:
 
-/* This module configures GRUB. */
-
 let
   cfg = config.modules.bootloader.grub;
 in
+
 {
   options.modules.bootloader.grub = {
     enable = lib.mkOption {
