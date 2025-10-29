@@ -6,7 +6,7 @@ in
 
 {
   options = {
-    modules.services.audio.enable = lib.mkEnableOption "Enable audio.";
+    modules.services.audio.enable = lib.mkEnableOption "Toggle audio";
   };
 
   config = lib.mkIf cfg.enable {
