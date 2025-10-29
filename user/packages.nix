@@ -5,6 +5,7 @@
     # Basic
     unstable.librewolf
     unstable.ungoogled-chromium
+    unstable.brave
     pkgs.nautilus
     pkgs.hyprshot
 
@@ -29,6 +30,7 @@
     pkgs.swww
     pkgs.rofi
     pkgs.waypaper
+    pkgs.localsend
 
     # Communication
     pkgs.discord

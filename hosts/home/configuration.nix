@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 /*
   TODO:
@@ -44,8 +44,13 @@
   /* Hostname */
   networking.hostName = "nix-home";
 
+  /* Kernel */
+  boot.kernelPackages = pkgs.linuxPackages_latest; #6_17
+
   /* Kernel parameters */
-  boot.kernelParams = [];
+  boot.kernelParams = [
+
+  ];
 
   /* System */
   system.nixos.tags = ["${config.networking.hostName}"];
