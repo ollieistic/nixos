@@ -1,10 +1,5 @@
 { config, lib, pkgs, ... }:
 
-/*
-  TODO:
-  - Add option to set default shell via a string
-*/
-
 {
   imports = [
     ./hardware.nix
@@ -22,6 +17,9 @@
     
     /* Services */
     services.audio.enable = true;
+
+    /* Apps */ 
+    apps.steam.enable = true;
 
     /* Bootloader */
     bootloader = {
