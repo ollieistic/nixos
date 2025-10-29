@@ -22,9 +22,6 @@
     
     /* Services */
     services.audio.enable = true;
-    services.bluetooth.enable = true;
-    services.ssh.enable = true;
-    services.virtualization.enable = true;
 
     /* Bootloader */
     bootloader = {
