@@ -3,8 +3,8 @@
 {
   imports = [
     ./hardware.nix
-    ./../../system
-    ./../../user
+    ../../system
+    ../../user
   ];
 
   modules = {

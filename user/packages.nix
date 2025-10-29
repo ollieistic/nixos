@@ -28,7 +28,6 @@
     # General
     pkgs.spotify
     pkgs.swww
-    pkgs.rofi
     pkgs.waypaper
     pkgs.localsend
 
