@@ -1,8 +1,12 @@
 { pkgs, unstable, inputs, ... }:
 
 {
+  imports = [
+    ./configs/steam.nix
+  ];
+
+  # System-wide installed packages
   environment.systemPackages = [
-    # Essential
     pkgs.vim
     pkgs.kitty
     pkgs.alacritty
