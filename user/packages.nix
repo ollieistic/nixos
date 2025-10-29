@@ -33,7 +33,7 @@
     pkgs.localsend
 
     # Communication
-    pkgs.discord
+    pkgs.vesktop
     pkgs.simplex-chat-desktop
     pkgs.bitwarden-desktop
   ];
