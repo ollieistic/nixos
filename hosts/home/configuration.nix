@@ -17,6 +17,9 @@
     
     /* Services */
     services.audio.enable = true;
+    services.bluetooth.enable = true;
+    services.ssh.enable = true;
+    services.virtualization.enable = true;
 
     /* Apps */ 
     apps.steam.enable = true;
@@ -43,7 +46,7 @@
   networking.hostName = "nix-home";
 
   /* Kernel */
-  boot.kernelPackages = pkgs.linuxPackages_latest; #6_17
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   /* Kernel parameters */
   boot.kernelParams = [

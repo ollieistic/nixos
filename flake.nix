@@ -7,6 +7,9 @@
     
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    silentSDDM.url = "github:uiriansan/SilentSDDM";
+    silentSDDM.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ nixpkgs, unstable, home-manager, ... }:

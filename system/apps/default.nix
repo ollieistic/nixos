@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./configs/steam.nix
+    ./steam.nix
+    ./sddm.nix
   ];
 
   # System-wide installed packages
