@@ -28,13 +28,9 @@
 
         specialArgs = { unstable = unstable-pkgs; inherit inputs; };
       
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-
         modules = [
           ./hosts/home/configuration.nix
+	  ./system
           inputs.home-manager.nixosModules.home-manager
         ];
       };
