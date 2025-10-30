@@ -27,8 +27,7 @@ in
       ohMyZsh = {
         enable = true;
 	plugins = [ "git" ];
-	custom = "$HOME/.oh-my-zsh/custom/";
-	#theme = "powerlevel10k/powerlevel10k";
+	# theme = "powerlevel10k";
       };
 
       promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
