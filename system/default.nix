@@ -24,6 +24,9 @@
   /* Nix settings */
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  /* Proprietary software */
+  nixpkgs.config.allowUnfree = true;
+
   /* State version (do NOT change unless fresh reinstall of NixOS) */
   system.stateVersion = "25.05";
 }
