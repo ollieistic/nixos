@@ -45,12 +45,17 @@
   /* Hostname */
   networking.hostName = "home";
 
-  /* Kernel */
+  /* Kernel version */ 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   /* Kernel parameters */
   boot.kernelParams = [
 
+  ];
+
+  /* Blacklisted kernel modules */
+  boot.blacklistedKernelModules = [
+    "nouveau"
   ];
 
   /* System */
