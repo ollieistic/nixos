@@ -43,7 +43,7 @@
   };
 
   /* Hostname */
-  networking.hostName = "nix-home";
+  networking.hostName = "home";
 
   /* Kernel */
   boot.kernelPackages = pkgs.linuxPackages_latest;
