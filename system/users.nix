@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   users.users.ollie = {
@@ -11,5 +11,9 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "hm-bak";
+
+  home-manager.users = {
+    "ollie" = import ../hosts/${config.networking.hostName}/home.nix;
+  };
 }
 
