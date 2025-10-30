@@ -55,7 +55,10 @@
 
   /* Blacklisted kernel modules */
   boot.blacklistedKernelModules = [
-    "nouveau"
+    "nouveau" # NVIDIA open-source driver
+
+    /* Prevent DMA attacks */
+    "firewire-core"
   ];
 
   /* System */
