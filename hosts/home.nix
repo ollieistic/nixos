@@ -1,24 +1,12 @@
 { ... }:
 
-let
-  username = "ollie"
-in
-
 {
   imports = [
    # ../user
   ];
 
- # modules = {
-  #  /* Shell */
-  #  shell = {
-  #    zsh.enable = true;
-  #    fish.enable = true;
-  #  };
-  #};
-
-  home.username = username;
-  home.homeDirectory = "/home" + username;
+  home.username = "ollie";
+  home.homeDirectory = "/home/ollie";
   home.stateVersion = "25.05";
 }
 
