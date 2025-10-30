@@ -1,40 +1,41 @@
-{ pkgs, unstable, ... }:
+{ pkgs, ... }:
 
 {
-  users.users.ollie.packages = [
+  users.users.ollie.packages = with pkgs; [
     # Basic
-    unstable.librewolf
-    unstable.ungoogled-chromium
-    unstable.brave
-    pkgs.nautilus
-    pkgs.hyprshot
+    librewolf
+    ungoogled-chromium
+    brave
+    nautilus
+    hyprshot
 
     # Gaming
-    pkgs.heroic
+    heroic
 
     # CLI
-    pkgs.bat
-    pkgs.tree
-    pkgs.btop
-    pkgs.tty-clock
-    pkgs.cava
-    pkgs.fastfetch
-    pkgs.lsd
+    bat
+    tree
+    btop
+    tty-clock
+    cava
+    fastfetch
+    lsd
 
     # Editors
-    pkgs.neovim
-    pkgs.vscode
+    neovim
+    vscode
 
     # General
-    pkgs.spotify
-    pkgs.swww
-    pkgs.waypaper
-    pkgs.localsend
+    spotify
+    swww
+    rofi
+    waypaper
+    localsend
 
     # Communication
-    pkgs.vesktop
-    pkgs.simplex-chat-desktop
-    pkgs.bitwarden-desktop
+    vesktop
+    simplex-chat-desktop
+    bitwarden-desktop
   ];
 }
 
