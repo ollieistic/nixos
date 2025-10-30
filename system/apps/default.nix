@@ -3,15 +3,23 @@
 {
   imports = [
     ./steam.nix
-    ./sddm.nix
+    # ./sddm.nix
   ];
 
   # System-wide installed packages
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.kitty
-    pkgs.alacritty
-    pkgs.git
-    pkgs.playerctl
+  environment.systemPackages = with pkgs; [
+    vim
+    neovim
+    kitty
+    alacritty
+    git
+    playerctl
+    bat
+    tree
+    btop
+    lsd
+    superfile
+    xfce.thunar
+    hyprshot
   ];
 }
