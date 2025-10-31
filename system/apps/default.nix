@@ -11,7 +11,6 @@
   # System-wide installed packages
   environment.systemPackages = with pkgs; [
     vim
-    neovim
     kitty
     alacritty
     git
