@@ -6,12 +6,12 @@ in
 
 {
   options = {
-    modules.apps.steam.enable = lib.mkEnableOption "Toggle steam and game optimizations";
+    modules.apps.steam.enable = lib.mkEnableOption "Toggle Steam and game optimizations";
   };
 
   config = lib.mkIf cfg.enable {
     # Install essential packages
-    environment.systemPackages = with pkgs; [ mangohud protonup ];
+    environment.systemPackages = with pkgs; [ mangohud protonup-ng ];
 
     programs.steam.enable = true;
     programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ]; # Fork of Proton (better)
