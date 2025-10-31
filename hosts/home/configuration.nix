@@ -45,17 +45,34 @@
   /* Hostname */
   networking.hostName = "home";
 
-  /* Kernel version */ 
+  /* Kernel */ 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  /* Kernel parameters */
-  boot.kernelParams = [
+  boot.kernelParams = [];
 
-  ];
-
-  /* Blacklisted kernel modules */
   boot.blacklistedKernelModules = [
     "nouveau" # NVIDIA open-source driver
+
+    /* Obscure network protocols */
+    "af_802154" # IEEE 802.15.4
+    "appletalk" # Appletalk
+    "atm"       # ATM
+    "ax25"      # Amatuer X.25
+    "can"       # Controller Area Network
+    "dccp"      # Datagram Congestion Control Protocol
+    "decnet"    # DECnet
+    "econet"    # Econet
+    "ipx"       # Internetwork Packet Exchange
+    "n-hdlc"    # High-level Data Link Control
+    "netrom"    # NetRom
+    "p8022"     # IEEE 802.3
+    "p8023"     # Novell raw IEEE 802.3
+    "psnap"     # SubnetworkAccess Protocol
+    "rds"       # Reliable Datagram Sockets
+    "rose"      # ROSE
+    "sctp"      # Stream Control Transmission Protocol
+    "tipc"      # Transparent Inter-Process Communication
+    "x25"       # X.25
 
     /* Prevent DMA attacks */
     "firewire-core"
