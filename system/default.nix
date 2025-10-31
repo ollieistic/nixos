@@ -3,11 +3,12 @@
 {
   imports = [
     ./users.nix
-    ./fonts.nix
+    ./optimize.nix
     ./hardware
     ./apps
     ./boot
     ./services
+    ./desktop/fonts.nix
     ./desktop/hyprland.nix
   ];
 
