@@ -53,7 +53,6 @@
     ungoogled-chromium
     brave
     vscode
-    heroic
     hyprshot
     vesktop
     bitwarden-desktop
