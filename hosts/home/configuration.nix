@@ -17,6 +17,10 @@
       # defaultShell = "zsh";
     };
 
+    system = {
+      optimize.enable = true; # Optimizes Nix stores
+    };
+
     services = {
       audio.enable = true;
       bluetooth.enable = true;
@@ -26,8 +30,8 @@
 
     apps = {
       steam.enable = true;
-      # heroic.enable = true;
-      # lutris.enable = true;
+      heroic.enable = true;
+      lutris.enable = true;
     };
 
     bootloader = {
