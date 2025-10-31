@@ -11,25 +11,25 @@ in
       enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
-        description = "Enable Limine as the bootloader.";
+        description = "Toggle Limine bootloader";
       };
 
       mode = lib.mkOption {
         type = lib.types.enum [ "uefi" "bios" ];
         default = "uefi";
-        description = "Choose between UEFI and BIOS modes.";
+        description = "Set UEFI/BIOS mode";
       };
 
       device = lib.mkOption {
         type = lib.types.str;
         default = "/dev/sda";
-        description = "Target device for BIOS installation.";
+        description = "Target device for BIOS installation";
       };
     };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
-    /* Common settings */
+    /* Shared Limine configuration */
     {
       boot.loader.limine.enable = true;
 

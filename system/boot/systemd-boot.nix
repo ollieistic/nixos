@@ -6,12 +6,12 @@ in
 
 {
   options.modules.bootloader.systemd-boot = {
-    enable = lib.mkEnableOption "Enable systemd-boot as bootloader.";
+    enable = lib.mkEnableOption "Toggle systemd-boot bootloader";
 
     efiMountPoint = lib.mkOption {
       type = lib.types.path;
       default = "/boot";
-      description = "EFI system partition mount point.";
+      description = "EFI system partition mount point";
     };
   };
 

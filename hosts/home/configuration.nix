@@ -7,24 +7,29 @@
     ../../user
   ];
 
+  /* Settings */
   modules = {
-    /* Proprietary NVIDIA drivers */
     drivers.nvidia.enable = true;
 
-    /* Shell */
-    shell.fish.enable = true;
-    shell.zsh.enable = true;
-    
-    /* Services */
-    services.audio.enable = true;
-    services.bluetooth.enable = true;
-    services.ssh.enable = true;
-    services.virtualization.enable = true;
+    shell = {
+      zsh.enable = true;
+      fish.enable = true;
+      # defaultShell = "zsh";
+    };
 
-    /* Apps */ 
-    apps.steam.enable = true;
+    services = {
+      audio.enable = true;
+      bluetooth.enable = true;
+      ssh.enable = true;
+      virtualization.enable = true;
+    };
 
-    /* Bootloader */
+    apps = {
+      steam.enable = true;
+      # heroic.enable = true;
+      # lutris.enable = true;
+    };
+
     bootloader = {
       /* Limine */
       limine.enable = true;
@@ -45,8 +50,8 @@
   /* Hostname */
   networking.hostName = "home";
 
-  /* Kernel */ 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  /* Kernel */
+  boot.kernelPackages = pkgs.linuxPackages_latest; # Kernel version
 
   boot.kernelParams = [];
 
@@ -78,7 +83,6 @@
     "firewire-core"
   ];
 
-  /* System */
   system.nixos.tags = ["${config.networking.hostName}"];
 }
 

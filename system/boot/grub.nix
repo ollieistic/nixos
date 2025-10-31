@@ -9,36 +9,36 @@ in
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Enable GRUB as the bootloader.";
+      description = "Toggle GRUB bootloader";
     };
 
     mode = lib.mkOption {
       type = lib.types.enum [ "uefi" "bios" ];
       default = "uefi";
-      description = "Choose between UEFI and BIOS installation modes.";
+      description = "Set UEFI/BIOS mode";
     };
 
     device = lib.mkOption {
       type = lib.types.str;
       default = "/dev/sda";
-      description = "Target device for BIOS installation.";
+      description = "Target device for BIOS installation";
     };
 
     efiSysMountPoint = lib.mkOption {
       type = lib.types.path;
       default = "/boot";
-      description = "EFI system partition mount point for UEFI mode.";
+      description = "EFI system partition mount point for UEFI mode";
     };
 
     useOSProber = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Whether to enable os-prober for detecting other OS installations.";
+      description = "Whether to enable os-prober for detecting other operating systems";
     };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
-    /* Common GRUB configuration */
+    /* Shared GRUB configuration */
     {
       boot.loader.grub.enable = true;
       boot.loader.grub.useOSProber = cfg.useOSProber;
