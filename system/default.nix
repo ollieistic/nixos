@@ -18,9 +18,6 @@
   /* Set timezone */
   time.timeZone = "Europe/Stockholm";
 
-  /* OpenGL */
-  hardware.graphics.enable = true;
-
   /* Nix settings */
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
