@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
-/* This file is shared across all hosts that use home-manager. */
-
 {
   imports = [
     #../user
@@ -17,24 +15,30 @@
   };
 
   home.pointerCursor = {
+    enable = true;
     x11.enable = true;
     gtk.enable = true;
-    package = pkgs.capitaine-cursors;
-    size = 24;
-    name = "Capitaine-Cursors";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 18;
   };
 
   gtk = {
     enable = true;
 
     iconTheme = {
-      package = pkgs.gruvbox-dark-icons-gtk;
       name = "Gruvbox-Dark-Icons";
+      package = pkgs.gruvbox-dark-icons-gtk;
     };
 
+    # cursorTheme = {
+    #   name = "Capitaine-Cursors";
+    #   package = pkgs.capitaine-cursors-themed;
+    # };
+
     theme = {
-      package = pkgs.gruvbox-gtk-theme;
       name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
 
     gtk3.extraConfig = {
