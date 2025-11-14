@@ -3,31 +3,34 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    silentSDDM.url = "github:uiriansan/SilentSDDM";
-    silentSDDM.inputs.nixpkgs.follows = "nixpkgs";
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations = {
-      home = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-      
-        modules = [
-          ./hosts/home/configuration.nix
-	  ./system
-          inputs.home-manager.nixosModules.home-manager
-        ];
+  in {
+    nixosConfigurations.home = nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      specialArgs = {
+        inherit inputs;
       };
+
+      modules = [
+        ./hosts/home/configuration.nix
+        ./system
+        inputs.home-manager.nixosModules.home-manager
+      ];
     };
   };
 }

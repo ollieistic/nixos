@@ -5,7 +5,7 @@
     ./steam.nix
     ./lutris.nix
     ./heroic.nix
-    # ./sddm.nix
+    ./sddm.nix
   ];
 
   # System-wide installed packages
@@ -22,5 +22,6 @@
     superfile
     xfce.thunar
     hyprshot
+    unzip
   ];
 }
