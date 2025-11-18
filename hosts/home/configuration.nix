@@ -54,6 +54,13 @@
   /* Hostname */
   networking.hostName = "home";
 
+  /* Firewall */
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPorts = [ 53317 ];
+  };
+
   /* Kernel */
   boot.kernelPackages = pkgs.linuxPackages_latest; # Kernel version
 
