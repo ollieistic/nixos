@@ -23,5 +23,12 @@
     xfce.thunar
     hyprshot
     unzip
+    cliphist
+    wl-clipboard
+    vlc
+    mpv
+    nomacs
+    ffmpegthumbnailer
+    xfce.tumbler
   ];
 }
