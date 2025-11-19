@@ -69,6 +69,7 @@
   home.packages = with pkgs; [
     librewolf
     ungoogled-chromium
+    tor-browser
     brave
     vscode
     hyprshot
@@ -81,7 +82,6 @@
     tty-clock
     waypaper
     swww
-    spotify
     rofi
     localsend
   ];
