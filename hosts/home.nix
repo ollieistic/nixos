@@ -31,10 +31,10 @@
       package = pkgs.gruvbox-dark-icons-gtk;
     };
 
-    # cursorTheme = {
-    #   name = "Capitaine-Cursors";
-    #   package = pkgs.capitaine-cursors-themed;
-    # };
+    cursorTheme = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+    };
 
     theme = {
       name = "Gruvbox-Dark";
@@ -84,6 +84,12 @@
     swww
     rofi
     localsend
+    pavucontrol
+    waybar
+    spotify
+    winboat
+    logseq
+    kdePackages.dolphin
   ];
 }
 

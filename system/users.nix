@@ -4,7 +4,7 @@
   users.users.ollie = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$5I7dTHoTOlHjVJI9Ww63U.$4dFnUjQkvQvzlOO0aTEKA3fwLEtqhdQKg0ej4No0556";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "qemu-libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "qemu-libvirtd" "docker" ];
     shell = "${pkgs.zsh}/bin/zsh";
   };
 

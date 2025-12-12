@@ -30,5 +30,7 @@
     nomacs
     ffmpegthumbnailer
     xfce.tumbler
+    dunst
+    gparted
   ];
 }

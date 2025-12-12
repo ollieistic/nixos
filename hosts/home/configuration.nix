@@ -94,6 +94,8 @@
     "firewire-core"
   ];
 
+  programs.dconf.enable = true;
+
   system.nixos.tags = ["${config.networking.hostName}"];
 }
 
