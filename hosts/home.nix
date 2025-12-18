@@ -8,7 +8,7 @@
 
   home.username = "ollie";
   home.homeDirectory = "/home/ollie";
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   modules.apps = {
     neovim.enable = true;
@@ -75,6 +75,8 @@
     hyprshot
     vesktop
     bitwarden-desktop
+    telegram-desktop
+    simplex-chat-desktop
     prismlauncher
     opencode
     fastfetch
@@ -90,6 +92,10 @@
     winboat
     logseq
     kdePackages.dolphin
+    lxappearance
+    qbittorrent
+    jellyflix
+    mullvad-vpn
   ];
 }
 
