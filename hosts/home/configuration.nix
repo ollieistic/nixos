@@ -26,6 +26,7 @@
       bluetooth.enable = true;
       ssh.enable = true;
       virtualization.enable = true;
+      flatpak.enable = true;
     };
 
     apps = {
