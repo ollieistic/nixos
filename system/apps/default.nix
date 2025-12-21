@@ -32,5 +32,6 @@
     xfce.tumbler
     dunst
     gparted
+    killall
   ];
 }
