@@ -37,8 +37,10 @@
     };
 
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      #name = "Gruvbox-Dark";
+      #package = pkgs.gruvbox-gtk-theme;
+      name = "Adwaita-dark";
+      package= pkgs.gnome-themes-extra;
     };
 
     gtk3.extraConfig = {
