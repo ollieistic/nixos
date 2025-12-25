@@ -33,5 +33,6 @@
     dunst
     gparted
     killall
+    appimage-run
   ];
 }
