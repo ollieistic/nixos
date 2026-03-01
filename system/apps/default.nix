@@ -20,7 +20,7 @@
     btop
     lsd
     superfile
-    xfce.thunar
+    thunar
     hyprshot
     unzip
     cliphist
@@ -29,10 +29,9 @@
     mpv
     nomacs
     ffmpegthumbnailer
-    xfce.tumbler
+    tumbler
     dunst
     gparted
     killall
-    appimage-run
   ];
 }

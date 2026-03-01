@@ -70,17 +70,12 @@
 
   home.packages = with pkgs; [
     librewolf
-    ungoogled-chromium
     tor-browser
     brave
     vscode
     hyprshot
     vesktop
-    bitwarden-desktop
-    telegram-desktop
-    simplex-chat-desktop
     prismlauncher
-    opencode
     fastfetch
     cava
     tty-clock
@@ -92,12 +87,11 @@
     waybar
     spotify
     winboat
-    logseq
     kdePackages.dolphin
     lxappearance
     qbittorrent
-    jellyflix
     mullvad-vpn
+    keepassxc
   ];
 }
 
