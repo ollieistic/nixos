@@ -92,6 +92,7 @@
     qbittorrent
     mullvad-vpn
     keepassxc
+    cryptomator
   ];
 }
 
