@@ -12,6 +12,10 @@ in
   config = lib.mkIf cfg.enable {
     services.flatpak = {
       enable = true;
+      packages = [
+        "org.vinegarhq.Vinegar"
+	"org.vinegarhq.Sober"
+      ];
     };
   };
 }

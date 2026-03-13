@@ -9,13 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
   in {
@@ -30,6 +32,7 @@
         ./hosts/home/configuration.nix
         ./system
         inputs.home-manager.nixosModules.home-manager
+	nix-flatpak.nixosModules.nix-flatpak
       ];
     };
   };
