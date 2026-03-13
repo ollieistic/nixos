@@ -6,8 +6,8 @@
     ../system/apps/neovim.nix
   ];
 
-  home.username = "ollie";
-  home.homeDirectory = "/home/ollie";
+  home.username = "ollieistic";
+  home.homeDirectory = "/home/ollieistic";
   home.stateVersion = "25.11";
 
   modules.apps = {
@@ -22,7 +22,7 @@
     name = "Bibata-Modern-Classic";
     size = 18;
   };
-
+  /*
   gtk = {
     enable = true;
 
@@ -55,6 +55,7 @@
       '';
     };
   };
+  */
 
   xdg = {
     enable = true;
@@ -73,26 +74,21 @@
     tor-browser
     brave
     vscode
-    hyprshot
     vesktop
     prismlauncher
     fastfetch
     cava
     tty-clock
-    waypaper
     swww
-    rofi
     localsend
-    pavucontrol
-    waybar
     spotify
-    winboat
     kdePackages.dolphin
-    lxappearance
     qbittorrent
-    mullvad-vpn
     keepassxc
     cryptomator
+    mullvad-vpn
+    element-desktop
+    gajim
   ];
 }
 
