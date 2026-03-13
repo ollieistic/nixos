@@ -5,13 +5,15 @@
     ./steam.nix
     ./lutris.nix
     ./heroic.nix
-    ./sddm.nix
+    ./librewolf.nix
+    #./sddm.nix
   ];
+
+  services.mullvad-vpn.enable = true;
 
   # System-wide installed packages
   environment.systemPackages = with pkgs; [
     vim
-    kitty
     alacritty
     git
     playerctl
@@ -21,16 +23,10 @@
     lsd
     superfile
     thunar
-    hyprshot
     unzip
-    cliphist
-    wl-clipboard
     vlc
     mpv
-    nomacs
     ffmpegthumbnailer
-    tumbler
-    dunst
     gparted
     killall
   ];
