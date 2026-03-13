@@ -21,4 +21,3 @@ in
     boot.loader.efi.efiSysMountPoint = cfg.efiMountPoint;
   };
 }
-

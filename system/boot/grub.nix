@@ -13,7 +13,10 @@ in
     };
 
     mode = lib.mkOption {
-      type = lib.types.enum [ "uefi" "bios" ];
+      type = lib.types.enum [
+        "uefi"
+        "bios"
+      ];
       default = "uefi";
       description = "Set UEFI/BIOS mode";
     };
@@ -37,28 +40,29 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable (lib.mkMerge [
-    /* Shared GRUB configuration */
-    {
-      boot.loader.grub.enable = true;
-      boot.loader.grub.useOSProber = cfg.useOSProber;
-    }
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      # Shared GRUB configuration
+      {
+        boot.loader.grub.enable = true;
+        boot.loader.grub.useOSProber = cfg.useOSProber;
+      }
 
-    /* BIOS mode */
-    (lib.mkIf (cfg.mode == "bios") {
-      boot.loader.grub.devices = [ cfg.device ];
-      boot.loader.grub.efiSupport = false;
-      boot.loader.grub.enableCryptodisk = true;
-    })
+      # BIOS mode
+      (lib.mkIf (cfg.mode == "bios") {
+        boot.loader.grub.devices = [ cfg.device ];
+        boot.loader.grub.efiSupport = false;
+        boot.loader.grub.enableCryptodisk = true;
+      })
 
-    /* UEFI mode */
-    (lib.mkIf (cfg.mode == "uefi") {
-      boot.loader.grub.efiSupport = true;
-      boot.loader.grub.efiInstallAsRemovable = false;
-      boot.loader.grub.device = "nodev";
-      boot.loader.efi.canTouchEfiVariables = true;
-      boot.loader.efi.efiSysMountPoint = cfg.efiSysMountPoint;
-    })
-  ]);
+      # UEFI mode
+      (lib.mkIf (cfg.mode == "uefi") {
+        boot.loader.grub.efiSupport = true;
+        boot.loader.grub.efiInstallAsRemovable = false;
+        boot.loader.grub.device = "nodev";
+        boot.loader.efi.canTouchEfiVariables = true;
+        boot.loader.efi.efiSysMountPoint = cfg.efiSysMountPoint;
+      })
+    ]
+  );
 }
-

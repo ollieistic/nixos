@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modules.apps.steam;
@@ -11,7 +16,10 @@ in
 
   config = lib.mkIf cfg.enable {
     # Install essential packages
-    environment.systemPackages = with pkgs; [ mangohud protonup-ng ];
+    environment.systemPackages = with pkgs; [
+      mangohud
+      protonup-ng
+    ];
 
     programs.steam.enable = true;
     programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ]; # Fork of Proton (better)
@@ -20,4 +28,3 @@ in
     hardware.steam-hardware.enable = true; # Add support for Steam hardware and HTC Vive
   };
 }
-

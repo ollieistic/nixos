@@ -1,4 +1,4 @@
-{pkgs, ...}: 
+{ pkgs, ... }:
 
 {
   programs.rofi = {
@@ -7,4 +7,3 @@
     theme = "./tokyo-night.rasi";
   };
 }
-

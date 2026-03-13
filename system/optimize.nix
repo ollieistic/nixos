@@ -18,4 +18,3 @@ in
     nix.gc.options = "--delete-older-than 30d";
   };
 }
-

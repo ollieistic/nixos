@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -23,7 +28,7 @@
 
     services = {
       audio.enable = true;
-      bluetooth.enable = true;
+      bluetooth.enable = false;
       ssh.enable = true;
       virtualization.enable = true;
       flatpak.enable = true;
@@ -33,7 +38,7 @@
       steam.enable = true;
       heroic.enable = true;
       lutris.enable = true;
-      librewolf.enable = true;
+      librewolf.enable = false;
     };
 
     bootloader = {
@@ -66,31 +71,31 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest; # Kernel version
 
-  boot.kernelParams = [];
+  boot.kernelParams = [ ];
 
   boot.blacklistedKernelModules = [
     "nouveau" # NVIDIA open-source driver
 
-    /* Obscure network protocols */
+    # Obscure network protocols
     "af_802154" # IEEE 802.15.4
     "appletalk" # Appletalk
-    "atm"       # ATM
-    "ax25"      # Amatuer X.25
-    "can"       # Controller Area Network
-    "dccp"      # Datagram Congestion Control Protocol
-    "decnet"    # DECnet
-    "econet"    # Econet
-    "ipx"       # Internetwork Packet Exchange
-    "n-hdlc"    # High-level Data Link Control
-    "netrom"    # NetRom
-    "p8022"     # IEEE 802.3
-    "p8023"     # Novell raw IEEE 802.3
-    "psnap"     # SubnetworkAccess Protocol
-    "rds"       # Reliable Datagram Sockets
-    "rose"      # ROSE
-    "sctp"      # Stream Control Transmission Protocol
-    "tipc"      # Transparent Inter-Process Communication
-    "x25"       # X.25
+    "atm" # ATM
+    "ax25" # Amatuer X.25
+    "can" # Controller Area Network
+    "dccp" # Datagram Congestion Control Protocol
+    "decnet" # DECnet
+    "econet" # Econet
+    "ipx" # Internetwork Packet Exchange
+    "n-hdlc" # High-level Data Link Control
+    "netrom" # NetRom
+    "p8022" # IEEE 802.3
+    "p8023" # Novell raw IEEE 802.3
+    "psnap" # SubnetworkAccess Protocol
+    "rds" # Reliable Datagram Sockets
+    "rose" # ROSE
+    "sctp" # Stream Control Transmission Protocol
+    "tipc" # Transparent Inter-Process Communication
+    "x25" # X.25
 
     # Prevent DMA attacks
     "firewire-core"
@@ -98,6 +103,5 @@
 
   programs.dconf.enable = true;
 
-  system.nixos.tags = ["${config.networking.hostName}"];
+  system.nixos.tags = [ "${config.networking.hostName}" ];
 }
-

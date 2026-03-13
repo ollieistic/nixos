@@ -7,4 +7,3 @@
     ./flatpak.nix
   ];
 }
-

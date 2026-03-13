@@ -3,10 +3,9 @@
     ./nvidia.nix
   ];
 
-  /* OpenGL */
+  # OpenGL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 }
-

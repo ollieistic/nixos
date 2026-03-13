@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modules.apps.lutris;
@@ -19,4 +24,3 @@ in
     hardware.steam-hardware.enable = true;
   };
 }
-

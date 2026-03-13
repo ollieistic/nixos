@@ -3,4 +3,3 @@
     ./plasma.nix
   ];
 }
-

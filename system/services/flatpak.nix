@@ -14,9 +14,8 @@ in
       enable = true;
       packages = [
         "org.vinegarhq.Vinegar"
-	"org.vinegarhq.Sober"
+        "org.vinegarhq.Sober"
       ];
     };
   };
 }
-

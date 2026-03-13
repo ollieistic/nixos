@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modules.services.virtualization;
@@ -15,4 +20,3 @@ in
     programs.virt-manager.enable = true;
   };
 }
-

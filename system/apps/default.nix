@@ -1,4 +1,9 @@
-{ pkgs, unstable, inputs, ... }:
+{
+  pkgs,
+  unstable,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -16,13 +21,11 @@
     vim
     alacritty
     git
-    playerctl
     bat
     tree
     btop
     lsd
     superfile
-    thunar
     unzip
     vlc
     mpv

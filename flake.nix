@@ -17,24 +17,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs:
-  let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations.home = nixpkgs.lib.nixosSystem {
-      inherit system;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+      nixosConfigurations.home = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-      specialArgs = {
-        inherit inputs;
+        specialArgs = {
+          inherit inputs;
+        };
+
+        modules = [
+          ./hosts/home/configuration.nix
+          ./system
+          inputs.home-manager.nixosModules.home-manager
+          nix-flatpak.nixosModules.nix-flatpak
+        ];
       };
-
-      modules = [
-        ./hosts/home/configuration.nix
-        ./system
-        inputs.home-manager.nixosModules.home-manager
-	nix-flatpak.nixosModules.nix-flatpak
-      ];
     };
-  };
 }
-

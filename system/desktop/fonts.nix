@@ -8,4 +8,3 @@
     nerd-fonts.ubuntu
   ];
 }
-

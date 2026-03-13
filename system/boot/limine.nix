@@ -15,7 +15,10 @@ in
       };
 
       mode = lib.mkOption {
-        type = lib.types.enum [ "uefi" "bios" ];
+        type = lib.types.enum [
+          "uefi"
+          "bios"
+        ];
         default = "uefi";
         description = "Set UEFI/BIOS mode";
       };
@@ -28,28 +31,29 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable (lib.mkMerge [
-    /* Shared Limine configuration */
-    {
-      boot.loader.limine.enable = true;
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      # Shared Limine configuration
+      {
+        boot.loader.limine.enable = true;
 
-      boot.loader.limine.style.wallpapers = [ wallpaper ];
-      boot.loader.limine.style.interface.resolution = "1920x1080";
-      boot.loader.limine.style.interface.branding = "NixOS";
-    }
+        boot.loader.limine.style.wallpapers = [ wallpaper ];
+        boot.loader.limine.style.interface.resolution = "1920x1080";
+        boot.loader.limine.style.interface.branding = "NixOS";
+      }
 
-    /* BIOS mode */
-    (lib.mkIf (cfg.mode == "bios") {
-      boot.loader.limine.biosSupport = true;
-      boot.loader.limine.biosDevice = [ cfg.device ];
-      boot.loader.limine.additionalFiles = [ wallpaper ];
-    })
+      # BIOS mode
+      (lib.mkIf (cfg.mode == "bios") {
+        boot.loader.limine.biosSupport = true;
+        boot.loader.limine.biosDevice = [ cfg.device ];
+        boot.loader.limine.additionalFiles = [ wallpaper ];
+      })
 
-    /* UEFI mode */
-    (lib.mkIf (cfg.mode == "uefi") {
-      boot.loader.limine.efiSupport = true;
-      boot.loader.efi.canTouchEfiVariables = true;
-    })
-  ]);
+      # UEFI mode
+      (lib.mkIf (cfg.mode == "uefi") {
+        boot.loader.limine.efiSupport = true;
+        boot.loader.efi.canTouchEfiVariables = true;
+      })
+    ]
+  );
 }
-

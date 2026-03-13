@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modules.shell.zsh;
@@ -18,15 +23,15 @@ in
 
       shellAliases = {
         ls = "lsd";
-	ll = "lsd -lh";
-	fetch = "fastfetch";
-	nixbuild = "sudo nixos-rebuild switch";
-	nixtest = "sudo nixos-rebuild dry-run";
+        ll = "lsd -lh";
+        fetch = "fastfetch";
+        nixbuild = "sudo nixos-rebuild switch";
+        nixtest = "sudo nixos-rebuild dry-run";
       };
 
       ohMyZsh = {
         enable = true;
-	plugins = [ "git" ];
+        plugins = [ "git" ];
       };
 
       promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.modules.shell.fish;
@@ -15,12 +20,11 @@ in
 
       shellAliases = {
         ls = "lsd";
-	ll = "lsd -lh";
-	fetch = "fastfetch";
-	nixbuild = "sudo nixos-rebuild switch";
-	nixtest = "sudo nixos-rebuild dry-run";
+        ll = "lsd -lh";
+        fetch = "fastfetch";
+        nixbuild = "sudo nixos-rebuild switch";
+        nixtest = "sudo nixos-rebuild dry-run";
       };
     };
   };
 }
-

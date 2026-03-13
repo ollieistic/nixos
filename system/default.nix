@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 
 {
   imports = [
@@ -20,7 +20,10 @@
   time.timeZone = "Europe/Stockholm";
 
   # Nix settings
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
@@ -28,4 +31,3 @@
   # State version (do NOT change unless fresh reinstall of NixOS)
   system.stateVersion = "25.11";
 }
-
