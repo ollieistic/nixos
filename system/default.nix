@@ -9,23 +9,23 @@
     ./boot
     ./services
     ./desktop/fonts.nix
-    ./desktop/hyprland.nix
+    ./desktop/plasma.nix
   ];
 
-  /* Networking (pick one) */
+  # Networking
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;
 
-  /* Set timezone */
+  # Set timezone
   time.timeZone = "Europe/Stockholm";
 
-  /* Nix settings */
+  # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  /* Proprietary software */
+  # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
-  /* State version (do NOT change unless fresh reinstall of NixOS) */
+  # State version (do NOT change unless fresh reinstall of NixOS)
   system.stateVersion = "25.11";
 }
 
