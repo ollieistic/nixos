@@ -7,7 +7,7 @@
     ../../user
   ];
 
-  /* Settings */
+  # Settings
   modules = {
     drivers.nvidia.enable = true;
 
@@ -33,36 +33,37 @@
       steam.enable = true;
       heroic.enable = true;
       lutris.enable = true;
+      librewolf.enable = true;
     };
 
     bootloader = {
-      /* Limine */
+      # Limine
       limine.enable = true;
       limine.mode = "uefi"; # "uefi" or "bios"
       limine.device = "nodev"; # Change this if you are on BIOS mode
 
-      /* Systemd-boot (UEFI only) */
+      # Systemd-boot (UEFI only)
       # systemd-boot.enable = true;
       # systemd-boot.efiMountPoint = "/boot";
 
-      /* GRUB */
+      # GRUB
       # grub.enable = true;
       # grub.mode = "uefi"; # "uefi" or "bios"
       # grub.device = "nodev"; # Change this if you are on BIOS Mode
     };
   };
 
-  /* Hostname */
+  # Hostname
   networking.hostName = "home";
 
-  /* Firewall */
+  # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 53317 ];
-    allowedUDPPorts = [ 53317 ];
+    allowedTCPPorts = [ 53317 ]; # 53317 = localsend
+    allowedUDPPorts = [ 53317 ]; # 53317 = localsend
   };
 
-  /* Kernel */
+  # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest; # Kernel version
 
   boot.kernelParams = [];
@@ -91,7 +92,7 @@
     "tipc"      # Transparent Inter-Process Communication
     "x25"       # X.25
 
-    /* Prevent DMA attacks */
+    # Prevent DMA attacks
     "firewire-core"
   ];
 
