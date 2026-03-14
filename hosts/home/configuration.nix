@@ -17,7 +17,6 @@
     shell = {
       zsh.enable = true;
       fish.enable = true;
-      # defaultShell = "zsh";
     };
 
     system = {
@@ -29,8 +28,8 @@
       virtualization.enable = true;
       flatpak.enable = true;
       bluetooth = {
-      	enable = true;
-      	blueman.enable = false; # Usually only needed for window managers
+        enable = true;
+        blueman.enable = false; # Usually only needed for window managers
       };
     };
 
@@ -69,8 +68,11 @@
   # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [53317]; # 53317 = localsend
-    allowedUDPPorts = [53317]; # 53317 = localsend
+    allowedTCPPorts = [53317];
+    allowedUDPPorts = [53317];
+
+    # Ports:
+    # 53317 - localsend
   };
 
   # Kernel
