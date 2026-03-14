@@ -26,17 +26,19 @@
 
     services = {
       audio.enable = true;
-      bluetooth.enable = false;
-      ssh.enable = true;
       virtualization.enable = true;
       flatpak.enable = true;
+      bluetooth = {
+      	enable = true;
+      	blueman.enable = false; # Usually only needed for window managers
+      };
     };
 
     apps = {
       steam.enable = true;
       heroic.enable = true;
       lutris.enable = true;
-      librewolf.enable = false;
+      librewolf.enable = true;
     };
 
     bootloader = {
