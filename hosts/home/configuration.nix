@@ -36,8 +36,8 @@
 
     apps = {
       steam.enable = true;
-      heroic.enable = true;
-      lutris.enable = true;
+      heroic.enable = false;
+      lutris.enable = false;
       librewolf.enable = true;
     };
 
@@ -57,6 +57,11 @@
       # grub.device = "nodev"; # Change this if you are on BIOS Mode
     };
   };
+
+  # Install flatpaks declaratively
+  services.flatpak.packages = [
+    "org.vinegarhq.Sober"
+  ];
 
   # Hostname
   networking.hostName = "home";
@@ -100,8 +105,6 @@
     # Prevent DMA attacks
     "firewire-core"
   ];
-
-  programs.dconf.enable = true;
 
   system.nixos.tags = ["${config.networking.hostName}"];
 }
