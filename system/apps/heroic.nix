@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.apps.heroic;
-in
-
-{
+in {
   options = {
     modules.apps.heroic.enable = lib.mkEnableOption "Toggle Heroic and game optimizations";
   };

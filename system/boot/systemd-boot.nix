@@ -1,10 +1,10 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.modules.bootloader.systemd-boot;
-in
-
 {
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.modules.bootloader.systemd-boot;
+in {
   options.modules.bootloader.systemd-boot = {
     enable = lib.mkEnableOption "Toggle systemd-boot bootloader";
 

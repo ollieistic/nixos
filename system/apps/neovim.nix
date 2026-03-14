@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.apps.neovim;
-in
-
-{
+in {
   options = {
     modules.apps.neovim.enable = lib.mkEnableOption "Toggle neovim";
   };

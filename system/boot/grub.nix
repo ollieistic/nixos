@@ -1,10 +1,10 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.modules.bootloader.grub;
-in
-
 {
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.modules.bootloader.grub;
+in {
   options.modules.bootloader.grub = {
     enable = lib.mkOption {
       type = lib.types.bool;
@@ -50,7 +50,7 @@ in
 
       # BIOS mode
       (lib.mkIf (cfg.mode == "bios") {
-        boot.loader.grub.devices = [ cfg.device ];
+        boot.loader.grub.devices = [cfg.device];
         boot.loader.grub.efiSupport = false;
         boot.loader.grub.enableCryptodisk = true;
       })

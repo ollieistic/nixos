@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.services.audio;
-in
-
-{
+in {
   options = {
     modules.services.audio.enable = lib.mkEnableOption "Toggle audio";
   };

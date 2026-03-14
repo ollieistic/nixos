@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.apps.lutris;
-in
-
-{
+in {
   options = {
     modules.apps.lutris.enable = lib.mkEnableOption "Toggle Lutris and game optimizations";
   };

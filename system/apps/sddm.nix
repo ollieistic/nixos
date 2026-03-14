@@ -2,14 +2,12 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   # an exhaustive example can be found in flake.nix
   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
     theme = "default"; # select the config of your choice
   };
-in
-{
+in {
   # include the test package which can be run using test-sddm-silent
   environment.systemPackages = [
     sddm-theme

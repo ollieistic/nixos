@@ -3,9 +3,7 @@
   unstable,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./steam.nix
     ./lutris.nix

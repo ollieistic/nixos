@@ -4,14 +4,10 @@
   pkgs,
   ...
 }:
-
 # Fix: This config only works for Firefox
-
 let
   cfg = config.modules.apps.librewolf;
-in
-
-{
+in {
   options = {
     modules.apps.librewolf.enable = lib.mkEnableOption "Enable Librewolf";
   };

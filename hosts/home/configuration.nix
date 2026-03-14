@@ -3,9 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./hardware.nix
     ../../system
@@ -64,14 +62,14 @@
   # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 53317 ]; # 53317 = localsend
-    allowedUDPPorts = [ 53317 ]; # 53317 = localsend
+    allowedTCPPorts = [53317]; # 53317 = localsend
+    allowedUDPPorts = [53317]; # 53317 = localsend
   };
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest; # Kernel version
 
-  boot.kernelParams = [ ];
+  boot.kernelParams = [];
 
   boot.blacklistedKernelModules = [
     "nouveau" # NVIDIA open-source driver
@@ -103,5 +101,5 @@
 
   programs.dconf.enable = true;
 
-  system.nixos.tags = [ "${config.networking.hostName}" ];
+  system.nixos.tags = ["${config.networking.hostName}"];
 }

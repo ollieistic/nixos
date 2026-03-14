@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.shell.zsh;
-in
-
-{
+in {
   options.modules.shell = {
     zsh.enable = lib.mkEnableOption "Enable Zsh shell";
   };
@@ -31,11 +27,10 @@ in
 
       ohMyZsh = {
         enable = true;
-        plugins = [ "git" ];
+        plugins = ["git"];
       };
 
       promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     };
   };
-
 }

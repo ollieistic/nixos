@@ -3,19 +3,15 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.drivers.nvidia;
-in
-
-{
+in {
   options = {
     modules.drivers.nvidia.enable = lib.mkEnableOption "Enable NVIDIA proprietary drivers";
   };
 
   config = lib.mkIf cfg.enable {
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = ["nvidia"];
 
     hardware.nvidia = {
       modesetting.enable = true;

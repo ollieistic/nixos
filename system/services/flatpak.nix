@@ -1,10 +1,10 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.modules.services.flatpak;
-in
-
 {
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.modules.services.flatpak;
+in {
   options = {
     modules.services.flatpak.enable = lib.mkEnableOption "Enable flatpak";
   };

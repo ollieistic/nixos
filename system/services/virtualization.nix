@@ -3,13 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.services.virtualization;
-in
-
-{
+in {
   options = {
     modules.services.virtualization.enable = lib.mkEnableOption "Toggle virtualization and VM software";
   };
